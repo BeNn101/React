@@ -4,23 +4,13 @@ import React, {useState} from 'react';
 
 export default function App() {
   const [titleText, setTitleText] = useState("Mes objectifs")
-  const bodyText = sampleGoals;
+  
 
   const onPressTitle = () => {
     setTitleText("WOW[pressed]");
   };  
 
-  const renderGoals = () => {
-    const goalElements = [];
-    for (let i = 0; i < bodyText.length; i++) {
-      goalElements.push(
-        <Text key={i} style={styles.bodyText}>
-          {'\u2022'} {bodyText[i]}
-        </Text>
-      );
-    }
-    return goalElements;
-  };
+  
 const FlatTask = () => {
   return (
 
@@ -32,7 +22,8 @@ const FlatTask = () => {
       </Text>
       <FlatList
       data={sampleGoals}
-      renderItem={({sampleGoals}) => <Text style={styles.bodyText}>
+      renderItem={({item}) => <Text style={styles.item}>
+        {item.key}
         
       </Text>}
       />
@@ -58,11 +49,8 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold'
   },
-  bodyContainer : {
-    alignItems: 'center',
-    justifyContent: 'center',    
-  },
-  bodyText: {
+  
+  item: {
     fontFamily: 'Cochin',
     fontSize: 16,
     marginVertical: 5,
@@ -82,7 +70,7 @@ const sampleGoals=[
   "Organiser un meetup",
   "Faire un triathlon",
 ];
-
+  return <FlatTask />;
 }
 
 
