@@ -72,8 +72,9 @@ export default function App() {
         <Text style={styles.titleText}>{titleText}</Text>
         <TextInput
           style={{ ...styles.textInput, 
-            placeholderTextColor: 'white', color: 'white'}}
+             color: 'white'}}
           placeholder="Rechercher..."
+          placeholderTextColor="#fff"
           onChangeText={handleSearchTextChange}
           value={searchText}
           onSubmitEditing={handleSearchSubmit}
@@ -121,6 +122,7 @@ const styles = StyleSheet.create({
   textInput: {
     fontStyle: 'italic',
     borderWidth: 2,
+    
     margin: 10,
     padding: 10,
     borderColor: 'white',
@@ -128,6 +130,7 @@ const styles = StyleSheet.create({
     maxHeight: 100,
     width: '90%',
   },
+  
   titleText: {
     fontFamily: 'Cochin',
     fontSize: 40,
@@ -143,7 +146,7 @@ const styles = StyleSheet.create({
   },
   itemText: {
     fontFamily: 'Cochin',
-    fontSize: 18,
+    fontSize: 19,
     marginVertical: 8,
     textAlign: 'center',
     marginTop: 20,
